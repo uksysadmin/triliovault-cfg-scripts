@@ -1,5 +1,9 @@
 ---
 - debug:
-    msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }} going to invoke {{ kolla_action }}"
+      msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }} going to invoke {{ kolla_action }}"
+  tags:
+      - "trilio"
 
 - include_tasks: "{{ kolla_action }}.yml"
+  tags:
+      - "trilio"
